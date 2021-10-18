@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link th:href="@{css/external.css}" rel="stylesheet"/><!--link to external .css stylesheet-->
+</head>
+<body>
+<div class="background">
+
+<form action="#" th:action="@{/save}" th:object="${b}" method="post">
+
+    <label for="fName">First name:</label><br>
+    <input type="text" id="fName" name="fName" th:field="*{f_name}"><br>
+    <label for="lName">Last name:</label><br>
+    <input type="text" id="lName" name="lName" th:field="*{l_name}"><br>
+    <label for="type">Type:</label><br>
+    <select name="type" id="type" th:field="*{type}">
+        <option value="savings">Savings</option>
+        <option value="current">Current</option>
+    </select>
+    <input type="number" id="bal" name="bal" th:field="*{bal}"><br>
+    <label for="date">Date opened:</label><br>
+    <input type="date" id="date" name="date" th:field="*{date}"><br>
+
+    <button class="button" type="submit"
+            id="createAcc">
+        CREATE ACCOUNT
+    </button>
+
+</form>
+
+</div>
+</body>
+</html>

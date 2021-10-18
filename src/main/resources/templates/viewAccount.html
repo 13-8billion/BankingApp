@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Account</title>
+    <link th:href="@{css/external.css}" rel="stylesheet"/><!--link to external .css stylesheet-->
+</head>
+<body>
+<p> Enter Account Number: </p>
+<form action="#" th:action="@{/view}" th:object="${ba}" method="post">
+
+<input type ="text" th:field="*{acc_no}">
+    <button class="button" type="submit">SUBMIT</button><br>
+<tr th:each="obj : ${ba}">
+    <b><label>AccNo:</label></b>
+    <td th:text="${ba.acc_no}"></td><br>
+    <b><label>Balance:</label></b>
+    <td th:text="${ba.bal}"></td><br>
+    <b><label>First Name:</label></b>
+    <td th:text="${ba.f_name}"></td><br>
+    <b><label>Last Name:</label></b>
+    <td th:text="${ba.l_name}"></td><br>
+</tr>
+</form>
+
+
+</body>
+</html>

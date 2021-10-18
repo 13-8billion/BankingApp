@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+    <link th:href="@{css/external.css}" rel="stylesheet"/><!--link to external .css stylesheet-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+
+<h1> DEPOSIT </h1>
+
+<form action="#" th:action="@{/transactions}" th:object="${t}" method="post">
+    <div class="content" style="display: block">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-4">
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" style=" background-color:white; margin-bottom:-5%">
+
+                        <div class="btn-group d-flex" role="group"
+                             style="width: 123%">
+                            <a href="transactions"
+                               class="btn btn-arrows active w-100">DEPOSIT</a>
+                            <a href="withdraw"
+                               class="btn btn-arrows w-100">WITHDRAW</a>
+                            <a href="openbal"
+                               class="btn btn-arrows w-100">OPENBAL</a>
+                            <a href="reversal"
+                               class="btn btn-arrows w-100">REVERSAL</a>
+                        </div>
+
+                        <label for="acc_no">Account Number:</label>
+                        <input type="text" id="acc_no" name="acc_no" th:field="*{acc_no}"><br>
+
+                        <label for="amount">Amount:</label>
+                        <input type="number" id="amount" name="amount" th:field="*{amount}"><br>
+
+
+                        <button class="button" type="submit"
+                                id="createAcc" name="deposit">
+                            DEPOSIT
+                        </button>
+
+                        <!--    <h1 style="color: white">DEPOSIT</h1>-->
+                        <!--    <select name="type" id="type">-->
+                        <!--        <option th:each="type : ${T(com.ab.bankingapp.models.Transactions.Type).values()}"-->
+                        <!--                th:value="${type}" th:text="${type}">Deposit</option>-->
+                        <!--    </select>-->
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+</body>
+</html>
