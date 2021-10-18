@@ -28,6 +28,8 @@ public class AppController {
     @Autowired
     BankAccService bs;
 
+    //test
+
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView showLanding() {
         return new ModelAndView("index");
